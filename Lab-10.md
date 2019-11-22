@@ -51,7 +51,7 @@ $ cd my-app
  - Create a Dockerfile with the content below:
 ```
 FROM selaworkshops/ngnix:alpine
-COPY . /usr/share/ngnix/html
+COPY . /usr/share/nginx/html
 ```
 
  - Build the docker image::
