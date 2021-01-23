@@ -8,7 +8,7 @@ Demo 01: First contact with containers
  - Pull the jenkins image:
 
 ```
-$ docker pull selaworkshops/jenkins-blueocean
+$ docker pull tshaiman/jenkins-blueocean
 ```
 
 ## Instructions
@@ -28,7 +28,7 @@ http://localhost:8080
 
  - Run a Jenkins container
 ```
-$ docker run --name jenkins -p 8080:8080 selaworkshops/jenkins-blueocean
+$ docker run --name jenkins -p 8080:8080 tshaiman/jenkins-blueocean
 ```
 
  - Browse to the Jenkins application
