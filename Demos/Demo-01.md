@@ -61,7 +61,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 
 ```
-$ docker run -it --name my-redis-cli --link some-redis:redis --rm redis redis-cli -h some-redis -p 6379
+$ docker run --name some-redis -d -p 6379:6379 redis
 ```
 
 
