@@ -1,5 +1,5 @@
 # Docker Workshop
-Demo 01: First contact with containers
+Lab 01: First interactions with containers
 
 ---
 
@@ -52,3 +52,38 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
  - Configure Jenkins using the administration password
  
+ ## Task
+ You will run Redis On Port 6379 , connect to it from Both CLI and from GUI Tool
+
+1. Download , configure and run Free Redis UI Tool: https://redislabs.com/blog/redisinsight-gui/
+
+2. Create a Redis Container running on port 6379, use your own name instead "some-redis"
+
+
+```
+$ docker run -it --name my-redis-cli --link some-redis:redis --rm redis redis-cli -h some-redis -p 6379
+```
+
+
+3. Create a Second Redis Container Instance running the command redis-cli and connecting it to the first container.
+use your own name for the CLI container and don't forget to connect it to the first container name
+
+```
+$ docker run -it --name my-redis-cli --link some-redis:redis --rm redis redis-cli -h some-redis -p 6379
+```
+
+4. when the CLI container starts , add a key to it using Redis CLI 
+
+```
+$ Set "my-val" 14
+```
+
+5. Open redisInsight UI , add your connection details ( localhost ,port 6379  , and look for the key you have added )
+
+
+## CleanUp
+
+```
+$ docker rm -f $(docker ps -a -q)
+```
+
